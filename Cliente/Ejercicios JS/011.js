@@ -1,6 +1,6 @@
 function compararNumeros() {
-    var a = 10;
-    var b = 20;
+    var a = 45;
+    var b = 123;
     if (a > b) {
         console.log("El mayor es: " + a);
     } else if (b > a) {
