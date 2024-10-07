@@ -4,3 +4,4 @@ function celsiusAFahrenheit() {
     let fahrenheit = (celsius * 9/5) + 32;
     alert(celsius + "°C son " + fahrenheit + "°F");
 }
+//TODO: la conversión del prompt nuevamente

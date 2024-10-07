@@ -7,3 +7,5 @@ function verificarEdad() {
         alert("Es menor de edad");
     }
 }
+
+//De nuevo los mismos errores

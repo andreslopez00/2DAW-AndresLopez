@@ -5,3 +5,6 @@ function sumarNumeros() {
     let suma = Number(numero1) + Number(numero2);
     alert("La suma es: " + suma);
 }
+
+//TODO: como te he reflejado antes tienes el símbolo + como opción 
+//es más cómodo si te acostumbras.

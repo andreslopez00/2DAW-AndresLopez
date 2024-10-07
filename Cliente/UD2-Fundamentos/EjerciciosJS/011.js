@@ -9,5 +9,7 @@ function compararNumeros() {
     } else {
         console.log("Los números son iguales");
     }
+
+    //TODO: Para mejorar deberías usar el operador nave espacial <=>
 }
 compararNumeros()

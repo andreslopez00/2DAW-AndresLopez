@@ -4,3 +4,4 @@ function cambiarColor() {
     let colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
     document.body.style.backgroundColor = colorAleatorio;
 }
+

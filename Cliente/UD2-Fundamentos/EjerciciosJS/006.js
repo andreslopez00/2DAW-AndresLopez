@@ -6,3 +6,4 @@ function perimetroRectangulo() {
     console.log("El perímetro del rectángulo es: " + perimetro);
 }
 perimetroRectangulo()
+

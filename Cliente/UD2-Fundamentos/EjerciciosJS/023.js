@@ -11,3 +11,5 @@ function compararLongitudes() {
     }
 }
 compararLongitudes()
+//TODO: hoy va a estar el garrin complicado :(
+

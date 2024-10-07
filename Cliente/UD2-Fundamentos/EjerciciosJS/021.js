@@ -8,3 +8,5 @@ function calcularFactorial() {
     console.log("El factorial de " + numero + " es: " + factorial);
 }
 calcularFactorial()
+
+//TODO: no le has puesto parámetros a la función!

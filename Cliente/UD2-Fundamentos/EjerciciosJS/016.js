@@ -11,3 +11,4 @@ function adivinarNumero() {
         }
     } while (intento != numeroAleatorio);
 }
+//TODO: la conversión del prompt otra vez

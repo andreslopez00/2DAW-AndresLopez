@@ -8,3 +8,11 @@ function palabraLarga() {
     console.log("La palabra más larga es: " + palabraLarga);
 }
 palabraLarga()
+
+//TODO: Jolín los parámetros!!! y la función no hace lo que debe.
+/* function detectarLapalabraLarga(cadena){
+ let palabra="";
+ let arrayPalabras=cadena.split(" ");
+ arratPalabras
+return palabra;
+}*/

@@ -6,3 +6,5 @@ function multiplicar() {
     console.log("El resultado de la multiplicación es: " + producto);
 }
 multiplicar()
+
+//De nuevo los mismos errores

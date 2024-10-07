@@ -8,3 +8,5 @@ function compararNombres() {
         alert("Los nombres no coinciden");
     }
 }
+
+//De nuevo los mismos errores

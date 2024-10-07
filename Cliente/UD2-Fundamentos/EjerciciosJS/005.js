@@ -6,3 +6,4 @@ function juntarCadenas() {
     let mensaje = nombre + " " + apellido + ", " + ciudad;
     alert(mensaje);
 }
+// Por qué la función???
