@@ -1,2 +1,2 @@
 <?php
-echo "<table border='8'>
+echo "<table border='8'>";
