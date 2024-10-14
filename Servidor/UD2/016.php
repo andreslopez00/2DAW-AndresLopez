@@ -11,3 +11,5 @@ echo "Mayor: $mayor<br>";
 echo "Menor: $menor<br>";
 echo "Media: $media";
 ?>
+
+//TODO: siempre que muestres valores decimales, recuerda redondear a 2 ó 3 cifras.

@@ -28,3 +28,4 @@ if (isset($_GET['cantidad'])) {
     </form>
 </body>
 </html>
+//TODO: esto no funciona y no lo entiendo.

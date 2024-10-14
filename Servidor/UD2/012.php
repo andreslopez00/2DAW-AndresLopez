@@ -11,3 +11,5 @@ for ($i = 0; $i < $filas; $i++) {
 }
 echo "</table>";
 ?>
+
+//TODO: si le meto 0 no obtengo tabla 👀

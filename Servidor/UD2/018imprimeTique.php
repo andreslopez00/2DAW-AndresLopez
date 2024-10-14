@@ -39,3 +39,5 @@ if (isset($_POST['productos'])) {
     </table>
 </body>
 </html>
+
+//TODO: esto no funciona y no lo entiendo.

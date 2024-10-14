@@ -13,3 +13,5 @@ $tamaño = 39;
 $contraseña = generaPass($tamaño);
 echo "Contraseña generada: $contraseña";
 ?>
+
+//TODO: no has tenido en cuenta que tiene que tener tanto letras como dígitos siempre.

@@ -12,3 +12,5 @@ if ($edad < 3) {
     echo "Jubilado";
 }
 ?>
+
+//TODO: un switch case es mejor opción que esto, ya hay que tener más madurez a la hora de programar

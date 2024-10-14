@@ -20,3 +20,4 @@ include 'header.php';
     <input type="submit" value="Enviar">
 </form>
 <?php include 'footer.php'; ?>
+//TODO: esto no funciona y no lo entiendo.

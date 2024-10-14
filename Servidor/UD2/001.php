@@ -10,3 +10,6 @@ Pero y este pavo?.
 
 // Oc rinconero
 ?>
+
+//TODO: te falta una forma:
+    <?= "hello" ?>

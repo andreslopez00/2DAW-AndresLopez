@@ -18,7 +18,7 @@ function normalaCani($cadena) {
     return $resultado;
 }
 // Prueba
-$textoOriginal = "Pero y este pavo??";
+$textoOriginal = "Pero y este pavoh que hace??";
 $textoCani =normalaCani($textoOriginal);
 echo "Texto original: $textoOriginal <br>";
 echo "Texto en formato cani: $textoCani";

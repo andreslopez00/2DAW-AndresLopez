@@ -1,7 +1,7 @@
 <?php
 $a = 2;  
-$b = -8;  
-$c = 7; 
+$b = 0;  
+$c = 1; 
 if ($a != 0) {
     $discriminante = $b * $b - 4 * $a * $c;
     if ($discriminante > 0) {

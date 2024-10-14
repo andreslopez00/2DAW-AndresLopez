@@ -1,5 +1,5 @@
 <?php
-$dinero = 345;
+$dinero = 999;
 $billetes = [500, 200, 100, 50, 20, 10, 5];
 $monedas = [2, 1];
 foreach ($billetes as $billete) {
@@ -13,3 +13,8 @@ foreach ($monedas as $moneda) {
     $dinero = $dinero % $moneda;
 }
 ?>
+
+//TODO: esta no es una buena forma de hacerlo.
+/* Primero debes meter todo en el mismo array, y luego comprobar qué tipo es 
+ para mostrar un mensaje u otro. Esto no tiene sentido así, tarda el doble.
+*/

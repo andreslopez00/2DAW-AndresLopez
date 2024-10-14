@@ -24,3 +24,5 @@ include 'header.php';
 <p><strong>Total en euros:</strong> <?php echo $totalEuros; ?> €</p>
 <p><strong>Total en pesetas:</strong> <?php echo number_format($totalEuros * EURO_A_PESETAS, 2); ?> Pts</p>
 <?php include 'footer.php'; ?>
+
+//TODO: esto no funciona y no lo entiendo.
