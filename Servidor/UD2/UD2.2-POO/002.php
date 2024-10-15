@@ -56,11 +56,10 @@ class Empleado {
     }
 }
 
-// Ejemplo de uso:
+// Ejemplo:
 $empleado = new Empleado("Charo", "Charez", 453);
 $empleado->añadirTelefono(634314599);
+echo $empleado->vaciarTelefonos();
 $empleado->añadirTelefono(765123321);
 echo $empleado->listarTelefonos(); 
-$empleado->vaciarTelefonos();
-echo $empleado->listarTelefonos();
 ?>
