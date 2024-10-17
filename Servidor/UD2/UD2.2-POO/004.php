@@ -1,17 +1,11 @@
 <?php
-
 class Empleado {
-    private string $nombre;
-    private string $apellidos;
-    private float $sueldo;
-
-    const SUELDO_TOPE = 3333;
-
-    public function __construct(string $nombre, string $apellidos, float $sueldo = 1000) {
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->sueldo = $sueldo;
-    }
+    public const SUELDO_TOPE = 3333;
+    public function __construct(
+        private string $nombre,
+        private string $apellidos,
+        private float $sueldo = 1000,
+    ) {}
 
     public function getNombre(): string {
         return $this->nombre;
@@ -35,7 +29,10 @@ class Empleado {
 }
 
 // Ejemplo:
-$empleado = new Empleado("Matito", "Utrerano", 4000);
-echo $empleado->getNombreCompleto(); 
-echo $empleado->debePagarImpuestos() ? ' Debe pagar impuestos' : ' No debe pagar impuestos'; 
+try {
+    echo "El sueldo tope para pagar impuestos es " . Empleado::SUELDO_TOPE . "€.";
+
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+}
 ?>

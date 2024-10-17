@@ -1,15 +1,11 @@
 <?php
-
 class Empleado {
-    private string $nombre;
-    private string $apellidos;
-    private float $sueldo;
-
-    public function __construct(string $nombre, string $apellidos, float $sueldo = 1000) {
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->sueldo = $sueldo;
-    }
+    private static float $sueldoTope = 3333;
+    public function __construct(
+        private string $nombre,
+        private string $apellidos,
+        private float $sueldo = 1000, 
+    ) {}
 
     public function getNombre(): string {
         return $this->nombre;
@@ -33,7 +29,12 @@ class Empleado {
 }
 
 // Ejemplo:
-$empleado = new Empleado("Andres", "López",);
-echo $empleado->getNombreCompleto(); 
-echo $empleado->debePagarImpuestos() ? ' Debe pagar impuestos' : ' No debe pagar impuestos'; // Debe pagar impuestos
+try {
+    $empleado1 = new Empleado("Oc", "Rinconero");
+    echo $empleado1->getNombreCompleto() . " tiene un sueldo de " . $empleado1->getSueldo() . "€";
+    echo $empleado1->debePagarImpuestos() ? ' y debe pagar impuestos.' : ' y no debe pagar impuestos.';
+
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+}
 ?>

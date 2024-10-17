@@ -5,9 +5,9 @@ class Empleado {
     private $sueldo;
 
     public function __construct($nombre, $apellidos, $sueldo) {
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->sueldo = $sueldo;
+        $this->setNombre($nombre);
+        $this->setApellidos($apellidos);
+        $this->setSueldo($sueldo);
     }
 
     public function getNombre() {
@@ -15,6 +15,9 @@ class Empleado {
     }
 
     public function setNombre($nombre) {
+        if (empty($nombre)) {
+            throw new Exception("El nombre no puede estar vacío.");  //excepcion para verificar que no esté vacio
+        }
         $this->nombre = $nombre;
     }
 
@@ -23,6 +26,9 @@ class Empleado {
     }
 
     public function setApellidos($apellidos) {
+        if (empty($apellidos)) {
+            throw new Exception("Los apellidos no pueden estar vacíos."); //excepcion para verificar que no esté vacio
+        }
         $this->apellidos = $apellidos;
     }
 
@@ -31,6 +37,9 @@ class Empleado {
     }
 
     public function setSueldo($sueldo) {
+        if (!is_numeric($sueldo) || $sueldo < 0) {
+            throw new Exception("El sueldo debe ser un número positivo."); //excepcion para verificar que sea un número positivo
+        }
         $this->sueldo = $sueldo;
     }
 
@@ -44,7 +53,11 @@ class Empleado {
 }
 
 // Ejemplo:
-$empleado = new Empleado("Manolo", "Manolez", 960);
-echo $empleado->getNombreCompleto(); 
-echo $empleado->debePagarImpuestos() ? ' debe pagar impuestos' : ' no debe pagar impuestos'; 
+try {
+    $empleado = new Empleado("Manolo", "Manolez", 876);
+    echo $empleado->getNombreCompleto(); 
+    echo $empleado->debePagarImpuestos() ? ' debe pagar impuestos' : ' no debe pagar impuestos';
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+}
 ?>

@@ -5,6 +5,7 @@ class Empleado {
         private string $nombre,
         private string $apellidos,
         private float $sueldo = 1000,
+        private array $telefonos = [] 
     ) {}
 
     public function getNombre(): string {
@@ -17,6 +18,14 @@ class Empleado {
 
     public function getSueldo(): float {
         return $this->sueldo;
+    }
+
+    public function getTelefonos(): array {
+        return $this->telefonos;
+    }
+
+    public function anyadirTelefono(int $telefono): void {
+        $this->telefonos[] = $telefono;
     }
 
     public function getNombreCompleto(): string {
@@ -37,20 +46,27 @@ class Empleado {
         }
         self::$sueldoTope = $nuevoTope;
     }
-}
 
+    // HTML
+    public static function toHtml(Empleado $emp): string {
+        $telefonosHtml = "<ol>";
+        foreach ($emp->getTelefonos() as $telefono) {
+            $telefonosHtml .= "<li>" . htmlspecialchars($telefono) . "</li>";
+        }
+        $telefonosHtml .= "</ol>";
+        return "
+            <p>
+                <a>Nombre:</a> " . htmlspecialchars($emp->getNombreCompleto()) . "<br>
+                <a>Sueldo:</a> " . htmlspecialchars($emp->getSueldo()) . "€<br>
+                <a>Teléfonos:</a> " . $telefonosHtml . "
+            </p>
+        ";
+    }
+}
 // Ejemplo:
 try {
-    $empleado1 = new Empleado("Cristian", "Cateto", 5000);
-    echo $empleado1->getNombreCompleto() . " tiene un sueldo de " . $empleado1->getSueldo() . "€";
-    echo $empleado1->debePagarImpuestos() ? ' y debe pagar impuestos.' : ' y no debe pagar impuestos.';
-    echo "<br>";
-    // Cambia el valor del sueldo tope
-    Empleado::setSueldoTope(8000);
-    echo "El nuevo sueldo tope para pagar impuestos es " . Empleado::getSueldoTope() . "€";
-    echo "<br>";
-    echo $empleado1->getNombreCompleto() . " ahora " . ($empleado1->debePagarImpuestos() ? 'debe' : 'no debe') . " pagar impuestos con el nuevo tope.";
-    
+    $empleado = new Empleado("Ana", "Martínez", 3450, [654236655, 678905512]);
+    echo Empleado::toHtml($empleado);
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();
 }
