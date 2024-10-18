@@ -1,19 +1,20 @@
 <?php
-class Empleado {
+namespace Ejercicio7;
+require_once '007Persona.php';
+class Empleado extends Persona {
     private static float $sueldoTope = 3333;
+    private float $sueldo;
+    private array $telefonos;
+
     public function __construct(
-        private string $nombre,
-        private string $apellidos,
-        private float $sueldo = 1000,
-        private array $telefonos = [] 
-    ) {}
-
-    public function getNombre(): string {
-        return $this->nombre;
-    }
-
-    public function getApellidos(): string {
-        return $this->apellidos;
+        string $nombre,
+        string $apellidos,
+        float $sueldo = 1000,
+        array $telefonos = []
+    ) {
+        parent::__construct($nombre, $apellidos);
+        $this->sueldo = $sueldo;
+        $this->telefonos = $telefonos;
     }
 
     public function getSueldo(): float {
@@ -28,13 +29,10 @@ class Empleado {
         $this->telefonos[] = $telefono;
     }
 
-    public function getNombreCompleto(): string {
-        return $this->nombre . ' ' . $this->apellidos;
-    }
-
     public function debePagarImpuestos(): bool {
         return $this->sueldo > self::$sueldoTope;
     }
+
 
     public static function getSueldoTope(): float {
         return self::$sueldoTope;
@@ -47,7 +45,6 @@ class Empleado {
         self::$sueldoTope = $nuevoTope;
     }
 
-    // HTML
     public static function toHtml(Empleado $emp): string {
         $telefonosHtml = "<ol>";
         foreach ($emp->getTelefonos() as $telefono) {
@@ -63,11 +60,5 @@ class Empleado {
         ";
     }
 }
-// Ejemplo:
-try {
-    $empleado = new Empleado("Andrés", "López", 3450, [654236655, 678905512]);
-    echo Empleado::toHtml($empleado);
-} catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
-}
+
 ?>
