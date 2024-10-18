@@ -30,10 +30,8 @@ abstract class Trabajador {
         $this->telefonos[] = $telefono;
     }
 
-    // Método abstracto
     public abstract function calcularSueldo(): float;
 
-    // Método abstracto para representación en HTML
     public abstract static function toHtml(Trabajador $t): string;
 
     public function __toString(): string {

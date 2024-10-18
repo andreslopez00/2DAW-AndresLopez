@@ -1,5 +1,5 @@
 <?php
-namespace Ejercicio12;
+namespace Ejercicio13;
 
 abstract class Persona {
     protected string $nombre;
@@ -27,10 +27,10 @@ abstract class Persona {
         $this->edad = $edad;
     }
 
+    public abstract static function toHtml(Persona $p): string;
+
     public function __toString(): string {
         return "Nombre Completo: " . $this->getNombreCompleto() . "\n" .
                "Edad: " . $this->getEdad() . " años\n";
     }
-
-    public abstract static function toHtml(Persona $p): string;
 }

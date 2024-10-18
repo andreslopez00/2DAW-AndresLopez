@@ -26,7 +26,6 @@ class Persona {
         $this->edad = $edad;
     }
 
-    // Método __toString para mostrar una representación de la Persona
     public function __toString(): string {
         return "Nombre Completo: " . $this->getNombreCompleto() . "\n" .
                "Edad: " . $this->getEdad() . " años <br>";

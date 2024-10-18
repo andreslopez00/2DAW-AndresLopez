@@ -11,7 +11,6 @@ class Gerente extends Trabajador {
         $this->salarioBase = $salarioBase;
     }
 
-    // Implementación del método abstracto
     public function calcularSueldo(): float {
         return $this->salarioBase + ($this->salarioBase * $this->edad / 100);
     }
@@ -26,10 +25,10 @@ class Gerente extends Trabajador {
 
             return "
                 <p>
-                    <strong>Nombre Completo:</strong> " . htmlspecialchars($t->getNombreCompleto()) . "<br>
-                    <strong>Edad:</strong> " . htmlspecialchars($t->getEdad()) . " años<br>
-                    <strong>Sueldo:</strong> " . htmlspecialchars($t->calcularSueldo()) . "€<br>
-                    <strong>Teléfonos:</strong> " . $telefonosHtml . "
+                    <a>Nombre Completo:</a> " . htmlspecialchars($t->getNombreCompleto()) . "<br>
+                    <a>Edad:</a> " . htmlspecialchars($t->getEdad()) . " años<br>
+                    <a>Sueldo:</a> " . htmlspecialchars($t->calcularSueldo()) . "€<br>
+                    <a>Teléfonos:</a> " . $telefonosHtml . "
                 </p>
             ";
         }

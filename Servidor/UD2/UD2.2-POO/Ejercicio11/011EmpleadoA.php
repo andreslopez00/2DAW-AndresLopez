@@ -49,10 +49,10 @@ class Empleado extends Persona {
 
             return "
                 <p>
-                    <strong>Nombre Completo:</strong> " . htmlspecialchars($p->getNombreCompleto()) . "<br>
-                    <strong>Edad:</strong> " . htmlspecialchars($p->getEdad()) . " años<br>
-                    <strong>Sueldo:</strong> " . htmlspecialchars($p->getSueldo()) . "€<br>
-                    <strong>Teléfonos:</strong> " . $telefonosHtml . "
+                    <a>Nombre Completo:</a> " . htmlspecialchars($p->getNombreCompleto()) . "<br>
+                    <a>Edad:</a> " . htmlspecialchars($p->getEdad()) . " años<br>
+                    <a>Sueldo:</a> " . htmlspecialchars($p->getSueldo()) . "€<br>
+                    <a>Teléfonos:</a> " . $telefonosHtml . "
                 </p>
             ";
         } else {
