@@ -4,6 +4,6 @@ let persona = {
     edad: 28,
     pais: "España"
 };
-console.log("nombre" in persona); 
-
-console.log("apellido" in persona);
+for (let clave in persona) {
+    console.log(`${clave}: ${persona[clave]}`);
+}
