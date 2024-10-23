@@ -1,0 +1,3 @@
+Ojo con suponer cosas, tienes que explicar los conceptos complicados.
+
+por qué usas el php ini de producción y no el de desarrollo, diferencias entre los 2.
