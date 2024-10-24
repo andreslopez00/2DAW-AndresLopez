@@ -1,3 +1,6 @@
+/*Crea un objeto usuario1 con las propiedades nombre, edad y email. Luego, crea
+una variable usuario2 y haz que sea una copia por referencia de usuario1. Modifica
+alguna propiedad de usuario2 y observa cómo cambia el objeto usuario1. */
 "use strict"
 let usuario1 = {
     nombre: "Andrés",

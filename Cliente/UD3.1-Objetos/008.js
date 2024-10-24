@@ -1,3 +1,6 @@
+/* Realiza una clonación superficial del objeto usuario1 utilizando Object.assign y
+cambia una propiedad del clon. Imprime ambos objetos para comprobar que el
+original no fue modificado */
 "use strict"
 let usuario1 = {
     nombre: "Andrés",

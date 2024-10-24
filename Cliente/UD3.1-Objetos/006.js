@@ -1,3 +1,6 @@
+/*Utiliza un bucle "for...in" para recorrer todas las propiedades del objeto
+persona e imprime tanto las claves como los valores.
+*/
 "use strict"
 let persona = {
     nombre: "Ana",

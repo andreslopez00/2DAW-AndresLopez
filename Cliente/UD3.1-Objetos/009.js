@@ -1,3 +1,5 @@
+/*Añade un método llamado saludar al objeto persona, que imprima un saludo
+como "Hola, soy Ana y tengo 28 años". Utiliza la palabra clave this dentro del método. */
 "use strict"
 let persona = {
     nombre: "Ana",
