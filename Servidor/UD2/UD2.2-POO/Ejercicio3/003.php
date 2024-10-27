@@ -1,6 +1,6 @@
 <?php
 class Empleado {
-    private static float $sueldoTope = 3333;
+    private static float $sueldoTope = 3333;//TODO: esto qué hace aquí????
     public function __construct(
         private string $nombre,
         private string $apellidos,

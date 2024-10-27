@@ -60,6 +60,8 @@ class Empleado extends Persona {
         }
     }
 
+    //TODO: Reutiliza el toString en el html
+
     public function __toString(): string {
         $telefonosStr = implode(", ", $this->telefonos);
         return parent::__toString() . 

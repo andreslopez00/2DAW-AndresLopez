@@ -24,6 +24,8 @@ class Persona {
             throw new Exception("La edad no puede ser negativa.");
         }
         $this->edad = $edad;
+
+        //TODO: para trabajar +16, pero bueno...
     }
 
     public function __toString(): string {

@@ -10,3 +10,5 @@ echo Empleado::toHtml($empleado);
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();
 }
+
+//TODO: debería suspenderte por estos ejemplos... XD

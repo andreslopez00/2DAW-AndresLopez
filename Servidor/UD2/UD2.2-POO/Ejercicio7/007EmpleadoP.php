@@ -1,10 +1,13 @@
 <?php
 namespace Ejercicio7;
+use Exception;
 require_once '007Persona.php';
 class Empleado extends Persona {
     private static float $sueldoTope = 3333;
     private float $sueldo;
     private array $telefonos;
+
+    //TODO: por qué ahora los constructores están a la forma antigua????? SOCORROOOOOOOOOO!!!!
 
     public function __construct(
         string $nombre,

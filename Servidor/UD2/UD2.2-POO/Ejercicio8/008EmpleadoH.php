@@ -60,6 +60,7 @@ class Empleado extends Persona {
             ";
         } else {
             return Persona::toHtml($p);
+            //TODO: esto no es una reutilización apropiada, método parent::
         }
     }
 }
