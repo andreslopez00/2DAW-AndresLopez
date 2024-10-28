@@ -1,8 +1,8 @@
 <?php
 class Empleado {
-    private $nombre;
-    private $apellidos;
-    private $sueldo;
+    private string $nombre;
+    private string $apellidos;
+    private float $sueldo;
 
     public function __construct($nombre, $apellidos, $sueldo) {
         $this->setNombre($nombre);
@@ -16,7 +16,7 @@ class Empleado {
 
     public function setNombre($nombre) {
         if (empty($nombre)) {
-            throw new Exception("El nombre no puede estar vacío.");  //excepcion para verificar que no esté vacio
+            throw new InvalidArgumentException("El nombre no puede estar vacío.");  //excepcion para verificar que no esté vacio
         }
         $this->nombre = $nombre;
     }

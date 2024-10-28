@@ -1,8 +1,8 @@
 <?php
 class EmpleadoTelefonos {
-    private $nombre;
-    private $apellidos;
-    private $sueldo;
+    private string $nombre;
+    private string $apellidos;
+    private float $sueldo;
     private $telefonos = [];
 
     public function __construct($nombre, $apellidos, $sueldo) {
