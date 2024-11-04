@@ -1,29 +1,70 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_FILES['archivo']) && isset($_POST['anchura']) && isset($_POST['altura'])) {
-        $archivo = $_FILES['archivo'];
-        $anchura = filter_var($_POST['anchura'], FILTER_VALIDATE_INT);
-        $altura = filter_var($_POST['altura'], FILTER_VALIDATE_INT);
-        $tipo_archivo = mime_content_type($archivo['tmp_name']);
-        $tipos_permitidos = ['image/jpeg', 'image/png', 'image/gif'];
+<!--005subidaImagen.php: Modifica el ejercicio anterior para que únicamente permita
+subir imágenes (comprueba la propiedad type del archivo subido). Si el usuario
+selecciona otro tipo de archivos, se le debe informar del error y permitir que suba un
+nuevo archivo.
+En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y
+altura recibido como parámetro.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subida de imágenes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">Subir imagen</h2>
+        <form action="" method="post" enctype="multipart/form-data" class="p-4 border rounded bg-white shadow-sm">
+            <div class="mb-3">
+                <label for="archivo" class="form-label">Selecciona una imagen</label>
+                <input type="file" class="form-control" name="archivo" id="archivo" accept="image/*" required>
+            </div>
 
-        if ($anchura && $altura && $archivo['error'] == 0 && in_array($tipo_archivo, $tipos_permitidos)) {
-            $nombre_archivo = basename($archivo['name']);
-            $destino = "uploads/" . $nombre_archivo;
+            <div class="mb-3">
+                <label for="ancho" class="form-label">Anchura (px)</label>
+                <input type="number" class="form-control" name="ancho" id="ancho" required>
+            </div>
 
-            if (move_uploaded_file($archivo['tmp_name'], $destino)) {
-                echo "<div class='alert alert-success'>Imagen subida correctamente.</div>";
-                echo "<p><strong>Imagen:</strong> $nombre_archivo</p>";
-                echo "<p><strong>Dimensiones:</strong> $anchura px x $altura px</p>";
-                echo "<img src='$destino' width='$anchura' height='$altura' class='img-thumbnail mt-3'>";
-            } else {
-                echo "<div class='alert alert-danger'>Error al mover la imagen.</div>";
+            <div class="mb-3">
+                <label for="alto" class="form-label">Altura (px)</label>
+                <input type="number" class="form-control" name="alto" id="alto" required>
+            </div>
+
+            <button type="submit" name="submit" class="btn btn-primary">Subir imagen</button>
+        </form>
+
+        <div class="mt-4">
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $archivo = $_FILES['archivo'];
+                $ancho = $_POST['ancho'];
+                $alto = $_POST['alto'];
+                $tipoArchivo = mime_content_type($archivo['tmp_name']);
+
+                if (strpos($tipoArchivo, 'image/') === 0) {
+                    $nombreArchivo = basename($archivo['name']);
+                    $rutaDestino = __DIR__ . '/archivos/' . $nombreArchivo;
+
+                    if (!is_dir(__DIR__ . '/archivos')) {
+                        mkdir(__DIR__ . '/archivos', 0777, true);
+                    }
+
+                    if (move_uploaded_file($archivo['tmp_name'], $rutaDestino)) {
+                        echo "<div class='alert alert-success'>Imagen subida exitosamente a 'archivos/$nombreArchivo'.</div>";
+                        echo "<p>Anchura: <strong>$ancho px</strong>, Altura: <strong>$alto px</strong></p>";
+                        echo "<div><img src='uploads/$nombreArchivo' width='$ancho' height='$alto' class='img-thumbnail'></div>";
+                    } else {
+                        echo "<div class='alert alert-danger'>Error al mover el archivo.</div>";
+                    }
+                } else {
+                    echo "<div class='alert alert-warning'>El archivo seleccionado no es una imagen. Por favor, sube un archivo de imagen válido.</div>";
+                }
             }
-        } else {
-            echo "<div class='alert alert-danger'>El archivo debe ser una imagen en formato JPEG, PNG o GIF y tener dimensiones válidas.</div>";
-        }
-    } else {
-        echo "<div class='alert alert-danger'>Faltan datos. Por favor, completa todos los campos.</div>";
-    }
-}
-?>
+            ?>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

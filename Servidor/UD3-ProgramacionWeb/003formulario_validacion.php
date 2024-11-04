@@ -1,14 +1,21 @@
+<!--003validacion.php: A partir del formulario anterior, introduce validaciones en HTML
+mediante el atributo required de los campos (uso los tipos adecuados para cada
+campo), y en comprueba los tipos de los datos y que cumplen los valores esperados
+(por ejemplo, en los checkboxes que los valores recogidos forman parte de todos los
+posibles). Puedes probar a pasarle datos erróneos vía URL y comprobar su
+comportamiento. Tip: Investiga el uso de la función filter_var.
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario para Validación</title>
+    <title>Formulario para validación</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Formulario de Registro con Validación</h1>
+        <h1 class="text-center">Formulario de registro con validación</h1>
         
         <form action="003validacion.php" method="post">
         <div class="form-group">

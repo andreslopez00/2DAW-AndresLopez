@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validación de Formulario</title>
+    <title>Validación de formulario</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Resultado de la Validación del Formulario</h1>
+        <h1 class="text-center mb-4">Resultado de la validación del formulario</h1>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Inicialización de variables y sanitización
             $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
             $url = filter_var($_POST['url'], FILTER_VALIDATE_URL);
@@ -46,7 +45,6 @@
                 $errores[] = "Selecciona al menos un menú válido.";
             }
 
-            // Mostrar errores si existen o datos válidos
             if (count($errores) > 0) {
                 echo "<div class='alert alert-danger'><h4>Errores en el formulario:</h4><ul>";
                 foreach ($errores as $error) {
