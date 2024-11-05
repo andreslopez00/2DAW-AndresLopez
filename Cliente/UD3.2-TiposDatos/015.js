@@ -2,6 +2,7 @@
 que el visitante ingrese un valor numérico válido. El valor resultante debe ser devuelto
 como number. El visitante puede también detener el proceso ingresando una línea
 vacía o presionando “CANCEL”. En tal caso la función debe devolver null*/
+"use strict"
 function readNumber() {
     let num;
     do {
