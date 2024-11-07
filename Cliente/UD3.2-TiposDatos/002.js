@@ -5,7 +5,7 @@ Convertir todo el texto a mayúsculas.
 Obtener la cantidad de caracteres.
 Extraer tu apellido usando substring() o slice().*/
 "use strict"
-let nombreCompleto = "OC Modo";
+let nombreCompleto = "Ever Banega";
 
 console.log("Mayúsculas:", nombreCompleto.toUpperCase()); 
 console.log("Cantidad de caracteres:", nombreCompleto.length); 
