@@ -9,11 +9,13 @@ P.D. Pista: usa split para dividir el string en un array, transfórmalo y vuelve
 (join).*/
 "use strict"
 function camelize(str) {
-    return str.split('_').map((word, index) =>
-        index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
-    ).join('');
-}
-
-console.log(camelize("background_color"));
-console.log(camelize("list_style_image"));
-console.log(camelize("_webkit_transition"));
+    return str
+      .split('_')          
+      .map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1)) 
+      .join('');           
+  }
+  
+  console.log(camelize("background_color"));   
+  console.log(camelize("list_style_image"));    
+  console.log(camelize("_webkit_transition")); 
+  

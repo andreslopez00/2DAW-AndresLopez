@@ -15,7 +15,7 @@ console.log("Añadimos Cereza:", fruits);
 fruits.push("Melocotón");
 console.log("Añadimos Melocotón:", fruits);
 
-console.log("Elementos con for clásico:");
+console.log("Elementos con for:");
 for (let i = 0; i < fruits.length; i++) {
     console.log(fruits[i]);
 }
