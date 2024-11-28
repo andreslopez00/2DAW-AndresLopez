@@ -1,0 +1,27 @@
+#clock {
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+#clock span {
+    font-weight: bold;
+}
+
+#clock .hours {
+    color: red;
+}
+
+#clock .minutes {
+    color: green;
+}
+
+#clock .seconds {
+    color: blue;
+}
+
+button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 1em;
+}
