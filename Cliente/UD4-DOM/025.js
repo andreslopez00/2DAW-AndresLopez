@@ -1,6 +1,5 @@
-/*024addCloseButton.html/.js: Agregar un botón de cierre: Hay una lista de mensajes.
-Usa JavaScript para agregar un botón de cierre en la esquina superior derecha de cada
-mensaje. El resultado debería verse algo así:*/
+/*025hideMessajeAfterClose.html/.js: Dale funcionalidad al botón de cierre que has
+creado para la lista de mensajes del ejercicio anterior. Es decir, haz que funcionen.*/
 "use strict"
 let messages = document.getElementById("messages");
 

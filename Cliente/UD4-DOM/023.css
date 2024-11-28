@@ -1,0 +1,29 @@
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.caret {
+    cursor: pointer;
+    user-select: none; 
+}
+
+.caret::before {
+    content: "▶";
+    color: green;
+    display: inline-block;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.caret.open::before {
+    transform: rotate(90deg);
+}
+
+ul.nested {
+    display: none;
+}
+
+ul.nested.active {
+    display: block;
+}

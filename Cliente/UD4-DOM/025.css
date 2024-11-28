@@ -1,0 +1,20 @@
+.message {
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: rgb(216, 255, 195);
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+.close-button:hover {
+    color: darkred;
+}

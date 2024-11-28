@@ -1,8 +1,12 @@
 /*023collapsableMenu.html/.js: Crea un menú que se abra/colapse al hacer click. Ej*/
 "use strict"
-let menu = document.getElementById('menu');
-let menuContent = document.getElementById('menuContent');
-
-menu.addEventListener('click', () => {
-    menuContent.style.display = menuContent.style.display === 'none' ? 'block' : 'none';
+document.querySelectorAll('.caret').forEach(caret => {
+    caret.addEventListener('click', function () {
+        this.classList.toggle('open'); 
+        let nestedList = this.nextElementSibling; 
+        if (nestedList) {
+            nestedList.classList.toggle('active'); // Muestra/oculta la lista
+        }
+    });
 });
+

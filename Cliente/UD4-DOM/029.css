@@ -1,0 +1,15 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    cursor: pointer;
+    user-select: none; 
+}
+li.selected {
+    background-color: #90ee90;
+    color: #000;
+}
