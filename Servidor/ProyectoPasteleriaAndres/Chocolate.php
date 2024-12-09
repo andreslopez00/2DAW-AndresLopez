@@ -13,6 +13,6 @@ class Chocolate extends Dulce {
     }
 
     public function muestraResumen(): void {
-        echo "Chocolate: {$this->getNombre()}, Precio: {$this->getPrecio()} €, Porcentaje de Cacao: {$this->porcentajeCacao}%, Peso: {$this->peso} g, IVA: " . self::getIVA() . "%\n";
+        echo "Chocolate: {$this->nombre}, Precio: {$this->precio} €, Cacao: {$this->porcentajeCacao}%, Peso: {$this->peso}g\n";
     }
 }

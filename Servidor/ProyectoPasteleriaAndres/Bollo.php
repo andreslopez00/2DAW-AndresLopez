@@ -11,6 +11,6 @@ class Bollo extends Dulce {
     }
 
     public function muestraResumen(): void {
-        echo "Bollo: {$this->getNombre()}, Precio: {$this->getPrecio()} €, Relleno: {$this->relleno}, IVA: " . self::getIVA() . "%\n";
+        echo "Bollo: {$this->nombre}, Precio: {$this->precio} €, Relleno: {$this->relleno}\n";
     }
 }
