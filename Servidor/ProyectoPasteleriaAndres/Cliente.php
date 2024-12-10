@@ -1,44 +1,27 @@
 <?php
 
-require_once 'Dulces.php';
+require_once 'DulceNoCompradoException.php';
+require_once 'DulceNoEncontradoException.php';
 
 class Cliente {
     private string $nombre;
     private string $numero;
     private int $numPedidosEfectuados;
-    private array $dulcesComprados = [];
+    private array $dulcesComprados;
 
     public function __construct(string $nombre, string $numero, int $numPedidosEfectuados = 0) {
         $this->nombre = $nombre;
         $this->numero = $numero;
         $this->numPedidosEfectuados = $numPedidosEfectuados;
+        $this->dulcesComprados = [];
     }
 
-    // Getters
     public function getNombre(): string {
         return $this->nombre;
     }
 
-    public function getNumero(): string {
-        return $this->numero;
-    }
-
     public function getNumPedidosEfectuados(): int {
         return $this->numPedidosEfectuados;
-    }
-
-    // Setters
-    public function setNombre(string $nombre): void {
-        $this->nombre = $nombre;
-    }
-
-    public function setNumero(string $numero): void {
-        $this->numero = $numero;
-    }
-
-    // Métodos
-    public function muestraResumen(): void {
-        echo "Cliente: {$this->nombre}, Pedidos efectuados: {$this->numPedidosEfectuados}\n";
     }
 
     public function listaDeDulces(Dulce $d): bool {
@@ -51,22 +34,24 @@ class Cliente {
     }
 
     public function comprar(Dulce $d): bool {
-        $this->dulcesComprados[] = $d;
+        if ($this->listaDeDulces($d)) {
+            throw new DulceNoEncontradoException("El dulce ya está en la lista de compras.");
+        }
         $this->numPedidosEfectuados++;
-        echo "El dulce '{$d->getNombre()}' ha sido comprado correctamente.\n";
+        $this->dulcesComprados[] = $d;
+        echo "Dulce comprado con éxito.\n";
         return true;
     }
 
     public function valorar(Dulce $d, string $comentario): void {
-        if ($this->listaDeDulces($d)) {
-            echo "Comentario sobre '{$d->getNombre()}': {$comentario}\n";
-        } else {
-            echo "No se puede valorar el dulce '{$d->getNombre()}' porque no ha sido comprado.\n";
+        if (!$this->listaDeDulces($d)) {
+            throw new DulceNoCompradoException("No puedes valorar un dulce que no has comprado.");
         }
+        echo "Has valorado el dulce '{$d->getNombre()}' con el comentario: $comentario\n";
     }
 
     public function listarPedidos(): void {
-        echo "El cliente '{$this->nombre}' ha realizado {$this->numPedidosEfectuados} pedidos:\n";
+        echo "Total de pedidos: {$this->numPedidosEfectuados}\n";
         foreach ($this->dulcesComprados as $dulce) {
             echo "- {$dulce->getNombre()}\n";
         }
