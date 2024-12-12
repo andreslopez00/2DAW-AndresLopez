@@ -1,0 +1,225 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding-top: 50px; 
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    background: linear-gradient(45deg, #f06292, #f8bbd0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 4px solid #d81b60;
+    font-family: 'Poppins', sans-serif;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo {
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px; 
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; 
+    font-weight: 700;
+    color: white;
+    margin-left: 15px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* Fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;500&display=swap');
+
+
+/* Estilo para los formularios */
+form {
+    background-color: rgb(255, 151, 236);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Campos de entrada */
+input[type="text"], input[type="password"] {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botones */
+button, .btn {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background-color: white;
+}
+
+/* Sección de productos y carrito */
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+#productos {
+    margin-bottom: 30px;
+}
+
+#lista-productos .col-md-3 {
+    margin-bottom: 20px;
+}
+
+#lista-productos .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#lista-productos .card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+#lista-productos .card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+#lista-productos .card-body h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#lista-productos .card-body p {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Carrito de compras */
+
+
+#total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilo para la sección de administración */
+#admin ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#admin li {
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Botón de cerrar sesión */
+#logout {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+#logout:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el mensaje de error */
+.alert {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+/* Encabezado */
+header {
+    background: linear-gradient(45deg, #f06292, #f8bbd0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 4px solid #d81b60;
+}
+
+/* Carrito */
+#carrito .card {
+    border: none;
+    border-radius: 15px;
+    background: #fff8e1;
+}
+
+#carrito .card-title {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#carrito table th {
+    background-color: #ffd54f;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+#carrito table td {
+    text-align: center;
+}
+
+#carrito #total {
+    color: #388e3c;
+}
+
+/* Botones del carrito */
+#carrito button {
+    transition: all 0.3s ease;
+}
+
+#carrito button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#vaciar-carrito {
+    background-color: #d32f2f;
+    border: none;
+}
+
+#realizar-pedido {
+    background-color: #198754;
+    border: none;
+}
+
+#vaciar-carrito i,
+#realizar-pedido i {
+    margin-right: 8px;
+}
+
+/* Fuentes */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
